@@ -1,0 +1,55 @@
+#iframe{
+	overflow: hidden;
+	background-color: #fff;
+}
+.content{
+	/*width: 75%;*/
+	float: left;
+}
+.tit{
+	margin: 10px 0px;
+	text-align: center;
+	font-weight: bolder;
+}
+label{
+	margin-bottom: 15px;
+}
+.list{
+	width: 0%;
+	background-color: pink;
+	float: right;
+	position: relative;
+}
+.logo{
+	width: 25px;
+	/*height: 50px;*/
+	position: absolute;
+	top: 15px;
+	left: -25px;
+	background-color: #E2E2E2;
+	cursor: pointer;
+}
+.look{
+	display: inline-block;
+    height: 38px;
+    line-height: 30px;
+    padding: 0 18px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.logo_img{
+	width: 16px;
+	height: 16px;
+	background: url(../../images/左箭头.png) center center / 16px 16px no-repeat;
+	margin: 4px auto 0px;
+}
+.logo_txt{
+	text-align: center;
+	margin-top: 4px;
+}

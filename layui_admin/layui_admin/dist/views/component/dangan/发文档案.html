@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../../../layui/rc/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/dangan.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/animate.css"/>
+		<title></title>
+		<style>
+			.inwidth {
+				width: 60%;
+			}
+			
+			.inbottom {
+				margin-bottom: 10px;
+			}
+			
+			/*.all_elements {
+				width: 1000px;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div style="width: 100%;background: #fff;">
+			<div style="height: 15px;"></div>
+			<div style="height: 50px;text-align: center;font-size: 25px;width: 100%;">发文档案</div>
+			<form method ="post" class ="layui-form" action ="http://192.168.0.186:8080/fwda">
+				<div class="layui-container all_elements">
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">全宗号</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text"name ="qzh" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">业务类型</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name ="ywlx" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">档案名称</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="damc" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">档案号</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="text" name="dah" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">密级</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="text" name="mj" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">保管期限</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="text" name="bgqx" id="bgqx" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">归档时间</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" id="gddate" name="gdsj" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">页数</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="number"  name="ys" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">项目号</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text"  name="xmh" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">项目名称</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text"  name="xmmc" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">申请单位</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="sqdw"  class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">联系人</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="lxr" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">联系电话</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="tel" name="lxdh" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">收件时间</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="sjsj" class="layui-input" id="sjdata">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label" id="fcdata">返仓时间</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="fcsj" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">发文文号</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="text" name="fwwh" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">发文单位</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="text" name="fwdw" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">发文份数</label>
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<input type="number" name="fwfs" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">发文名称</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="fwmc" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">发文标题</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="fwbt" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">宗地号</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="zdh" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">测绘成果号</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="chcgh" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">坐落地点</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="zldd" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">使用权类型</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="syqlx" class="layui-input">
+						</div>
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">土地用途</label>
+						</div>
+						<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+							<input type="text" name="tdyt" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-row inbottom">
+						<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+							<label class="layui-form-label">备注</label>
+						</div>
+						<div class="layui-col-md10 layui-col-sm10 layui-col-xs10">
+							<input type="text" name="bz" class="layui-input">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div style="margin-right: 110px;float: right;" class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="../../../../layui/rc/layui.js"></script>
+		<script src="../../../jquery.min.js"></script>
+		<script>
+			layui.use(['laydate','form'], function() {
+				var laydate = layui.laydate;
+				var form = layui.form;
+				//执行一个laydate实例
+				laydate.render({
+					elem: '#gddate'
+				});
+				laydate.render({
+					elem: '#sjdata'
+				});
+				laydate.render({
+					elem: '#fcdata'
+				});	
+				laydate.render({
+					elem: '#bgqx'
+				});
+				
+//				form.on('submit(formDemo)',function(data){
+//					layer.msg(JSON.stringify(data.field));
+//  				return false;
+//				});
+			});
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../style/admin.css"/>
+		<link rel="stylesheet" href="../../../../layui/rc/css/layui.css" media="all">
+	</head>
+	<body>
+		<div id="iframe" class="layui-fluid">
+			<ul style="background-color: #fff;" class="list layui-row layui-form">
+			  	<li style="margin: 10px auto;" class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+			  		<label class="layui-form-label" style="padding: 9px 0px 9px 5px;width: 70px;">项目名称：</label>
+				    <div class="layui-input-block" style="margin-left: 75px;">
+				      <input style="padding-left: 5px;" type="text" name="" placeholder="项目名/项目编号" autocomplete="off" class="layui-input">
+				    </div>
+			  	</li>
+			  	<li style="margin: 10px 5px auto;" class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+			  		<label class="layui-form-label" style="padding: 9px 0px 9px 5px;width: 70px;">业务分类：</label>
+				    <div class="layui-input-block" style="margin-left: 75px;">
+				      <select name="interest" lay-filter="aihao">
+				        <option value="0">城镇地籍数据库</option>
+				      </select>
+				    </div>
+			  	</li>
+			  	<li style="margin: 10px 5px auto;" class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+			  		<label class="layui-form-label" style="padding: 9px 0px 9px 5px;width: 70px;">档案分类：</label>
+				    <div class="layui-input-block" style="margin-left: 75px;">
+				      <select name="interest" lay-filter="aihao">
+				        <option value="0">地籍档案_初始变更库</option>
+				        <option value="1">地籍档案_抵押注销库</option>
+				        <option value="2">地籍档案_调查详查库</option>
+				        <option value="3">地籍档案_初始变更库(按卷)</option>
+				        <option value="4">地籍档案_个人变更登记</option>
+				        <option value="5">地籍档案_个人变更库</option>
+				        <option value="6">地籍档案_私房登记库</option>
+				        <option value="7">地籍档案_私房登记库(立卷)</option>
+				        <option value="8">地籍档案_土地冻结登记</option>
+				        <option value="9">建设用地档案</option>
+				        <option value="10">土地出让档案</option>
+				        <option value="11">土地划拨档案</option>
+				        <option value="12">土地转让档案</option>
+				        <option value="13">征地拆迁档案</option>
+				        <option value="14">发文档案</option>
+				        <option value="15">收文档案</option>
+				        <option value="16">文书档案</option>
+				        <option value="17">其他档案</option>
+				      </select>
+				    </div>
+			  	</li>
+			  	<li style="margin: 10px 5px auto;overflow: hidden;" class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+			  		<label class="layui-form-label" style="padding: 9px 0px 9px 5px;width: 42px;">日期：</label>
+			  		<div class="layui-input-block" style="margin-left:0px;float: left;width: 115px">
+				    	<input style="padding-left: 5px;height: 24px;margin-top: 7px;" type="datetime-local" name="" placeholder="" autocomplete="off" class="layui-input">
+				    </div>
+				    <div style="float: left;line-height: 34px;margin: 0px 3px;"> - </div>
+				    <div class="layui-input-block" style="margin-left:0px;float: left;width: 115px">
+				    	<input style="padding-left: 5px;height: 24px;margin-top: 7px;" type="datetime-local" name="" placeholder="" autocomplete="off" class="layui-input">
+				    </div>
+			  	</li>
+			  	<li class="ssbtn">搜索</li>
+			  </ul>
+			  <div style="background-color: #fff;margin-top: 20px;" class="layui-row layui-form">
+			  	<table id="demo" lay-filter="test"></table>
+			  </div>
+		</div>
+	</body>
+	<script type="text/html" id="barDemo">
+		<a style="line-height: 30px;" lay-event="look" class="layui-btn look">查看</a>
+	</script>
+	<script src="../../../jquery.min.js"></script>
+	<script src="../../../../layui/rc/layui.js"></script>
+	<script type="text/javascript">
+		layui.use('table', function(){
+		  var table = layui.table;
+		  
+		  //第一个实例
+		  table.render({
+		    elem: '#demo'
+		    ,id: 'idTest'
+		    ,height: 400
+		    ,url: '../../../../json/table.json' //数据接口
+		    ,page: true //开启分页
+		    ,cols: [[ //表头
+		      {field: 'id', title: '序号', width:80, align : 'center',sort: true, fixed: 'left'}
+		      ,{field: 'username', title: '业务类型', align : 'center',width:80}
+		      ,{field: 'sex', title: '测绘类型号',align : 'center', width:120, sort: true}
+		      ,{field: 'city', title: '宗地号', align : 'center',width:80} 
+		      ,{field: 'sign', title: '档案类型', align : 'center',width: 160}
+		      ,{field: 'experience', title: '项目名称', align : 'center',width: 100, sort: true}
+		      ,{field: 'logins', title: '申请单位', align : 'center',width: 100, sort: true}
+		      ,{field: 'wealth', title: '收件时间', align : 'center',width: 140}
+		      ,{title : '操作',width : 228,align : 'center',toolbar : '#barDemo'}
+		    ]]
+		    ,done: function (res, curr, count) {
+	            table.on('tool(test)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+	                var data = obj.data; //获得当前行数据
+	                var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+	                var tr = obj.tr; //获得当前行 tr 的DOM对象
+	                if(layEvent=="look"){
+	                	var box = $(window.parent.document).contents().find("#box");
+                       console.log(data.sign,box);
+                       box.attr('src','../../../../layui_admin_template/layui_admin/dist/views/component/dangan/' + data.sign + '.html');
+                    }
+				});
+			}
+		});
+	})
+		/*setTimeout(function(){
+			$('.look').click(function(){
+				var i = $(this).index();
+				console.log(i);
+				var selectData = layui.table.checkStatus('idTest').data;
+				console.log(selectData);
+			});
+		},1000)*/
+	</script>
+</html>

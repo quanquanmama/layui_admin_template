@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../../../layui/rc/css/layui.css" media="all">
+	</head>
+
+	<body class="layui-layout-body">
+		<form class="layui-form" style="margin-top: 100px" id="submit1">
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<label><input class="layui-btn" type="button" data-method="addInput" value="新增"></label>
+				</div>
+			</div>
+			<div id="fileload">
+				<div class="layui-form-item">
+					<label class="layui-form-label">1</label>
+					<label class="layui-form-label">文件名</label>
+					<div class="layui-input-inline">
+						<input type="text" placeholder="请输入文件名" class="layui-input">
+					</div>
+					<label class="layui-form-label">题名</label>
+					<div class="layui-input-inline">
+						<input type="text" placeholder="请输入题名" class="layui-input">
+					</div>
+					<input type="button" value="文件上传" id="file1" class="layui-btn">
+					<input type="button" value="删除" data-method="delInput" class="layui-btn">
+				</div>
+			</div>
+		</form>
+
+		<script src="../../../layui/rc/layui.js"></script>
+		<script>
+			var count = 2;
+			layui.use(['layer', 'upload'], function() {
+				var $ = layui.jquery,
+					layer = layui.layer;
+				upload = layui.upload;
+				//指定允许上传的文件类型
+				upload.render({
+					elem: '#file1',
+					url: '/upload/',
+					accept: 'file',
+					exts: 'pdf|jpd|png|jpeg',
+					done: function(res) {
+						console.log(res)
+					}
+				});
+				var active = {
+					addInput: function() {
+						var fileid = 'file' + count;
+						var newInput =
+							'<div class="layui-form-item">\n' +
+							'\t<label class="layui-form-label">\n' + count + '\t</label>\n' +
+							'\t<label class="layui-form-label">文件名</label>\n' +
+							'\t<div class="layui-input-inline">\n' +
+							'\t\t<input type="text" placeholder="请输入文件名" class="layui-input">\n' +
+							'\t</div>\n' +
+							'\t<label class="layui-form-label">题名</label>\n' +
+							'\t<div class="layui-input-inline">\n' +
+							'\t\t<input type="text" placeholder="请输入题名" class="layui-input">\n' +
+							'\t</div>\n' +
+							'\t<input type="button" value="文件上传" id=\n' + fileid + '\tclass="layui-btn">\n' +
+							'\t<input type="button" value="删除" data-method="delInput" class="layui-btn">\n' +
+							'</div>';
+						$('#fileload').append(newInput);
+						upload.render({
+							elem: '#'+fileid,
+							url: '/upload/',
+							accept: 'file',
+							exts: 'pdf|jpd|png|jpeg',
+							done: function(res) {
+								console.log(res)
+							}
+						});
+						count++;
+					},
+					delInput: function(othis) {
+						othis.parent().remove();
+						count--;
+					}
+				};
+				//已加载完的元素用
+				$('.layui-btn').on('click', function() {
+					var othis = $(this),
+						method = othis.data('method');
+					active[method].call(this, othis);
+				});
+				//动态加载元素用
+				$('#fileload').on('click', '.layui-btn', function() {
+					var othis = $(this),
+						method = othis.data('method');
+					active[method].call(this, othis);
+				});
+			});
+		</script>
+	</body>
+
+</html>

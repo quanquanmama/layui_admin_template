@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../../../layui/rc/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/dangan.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/animate.css"/>
+		<title></title>
+		<style>
+			.inwidth {
+				width: 60%;
+			}
+			
+			.inbottom {
+				margin-bottom: 10px;
+			}
+			
+			/*.all_elements {
+				width: 1000px;
+			}*/
+			
+			.lablesty {
+				display: block;
+				font-weight: 400;
+				line-height: 20px;
+				text-align: center;
+				margin-top: 6px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="width: 100%;">
+			<div style="height: 15px;"></div>
+			<div style="height: 50px;text-align: center;font-size: 25px;width: 100%;">征地拆迁档案</div>
+			<div class="layui-container all_elements">
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">全宗号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">年度</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">分类号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">案卷题名</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">档号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">保管期限</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">密级</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">业务编号</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">业务类型</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">成文日期</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" id="zcjdate" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">盒号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">件号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">实体份数</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">实体当前份数</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">总页数</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">项目号</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">项目名称</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">申请单位部门</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">责任者</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">联系人</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">联系电话</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">批准日期</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" id="zpzdate" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">收件时间</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" id="zsjdate" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">返仓时间</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" id="zfcdate" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">宗地号</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">测绘成果号</label></div>
+					<div class="layui-col-md4 layui-col-sm4 layui-col-xs4"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">坐落地点</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">原国土ID</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">土地用途</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">使用权类型</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">拆迁公告号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">审批单号</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">本次批准面积（亩）</label></div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">下达指标单位</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">户主名称</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">集体名称</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+				<div class="layui-row inbottom">
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2"><label class="layui-form-label">备注</label></div>
+					<div class="layui-col-md10 layui-col-sm10 layui-col-xs10"><input type="text" name="number" class="layui-input"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="../../../../layui/rc/layui.js"></script>
+		<script src="../../../jquery.min.js"></script>
+		<script>
+			layui.use('laydate', function() {
+				var laydate = layui.laydate;
+				//执行一个laydate实例
+				laydate.render({
+					elem: '#zcjdate'
+				});
+				laydate.render({
+					elem: '#zpzdate'
+				});
+				laydate.render({
+					elem: '#zsjdate'
+				});	
+				laydate.render({
+					elem: '#zfcdate'
+				});					
+			});
+		</script>
+	</body>
+
+</html>

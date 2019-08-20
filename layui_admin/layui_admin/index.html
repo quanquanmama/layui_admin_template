@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layuiAdmin pro - 通用后台管理模板系统（单页面专业版）</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="./layui/rc/css/layui.css" media="all">
+</head>
+<body>
+<div id="LAY_app"></div>
+<script src="./layui/rc/layui.js"></script>
+<script>
+    // https://www.layui.com/admin/pro/
+    layui.config({
+        base: './dist/', //指定 layuiAdmin 项目路径
+        version: '1.0.0'
+    }).use('index', function() {
+        if (/^http(s*):\/\//.test(location.href) ) {return 1;}
+
+        var layer = layui.layer, admin = layui.admin;
+        layer.ready(function() {
+            admin.popup({
+                content: '请部署到web服务器下根目录下用http://访问',
+                area: '300px',
+                btnAlign: 'c',
+                shade: false
+            });
+        });
+        return 0;
+    });
+    // xhr path
+    window.CONTEXT_PATH = "http://127.0.0.1:8000";
+</script>
+
+</body>
+</html>
+
+

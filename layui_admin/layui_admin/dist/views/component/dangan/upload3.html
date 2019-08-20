@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />-->
+		<link rel="stylesheet" type="text/css" href="../../../../layui/rc/css/layui.css"/>
+		<title>文件上传</title>
+		<style>
+			.labsty{
+				font-size:16px;
+				line-height: 33px;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			<legend>多文件列表列表</legend>
+		</fieldset>-->
+
+		<div class="layui-upload" style="overflow:scroll; width:1100px; height:400px;margin-left: 50px;">
+			<!--<button class="layui-btn layui-btn-normal" data-method="addInput" id="add" type="button">新增</button>-->
+			<!--<button class="layui-btn layui-btn-normal" id="testList" type="button">选择多文件</button>-->
+			<div class="layui-upload-list" id="divid" style="width: 1000px;">
+				<!--<div class="layui-container">
+				<div class="layui-row">
+					<div class="layui-col-md1 layui-col-sm1 layui-col-xs1">
+						<label class="labsty">档案id:</label>
+					</div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+						<input type="text" id="daid" class="layui-input">
+					</div>
+					<div class="layui-col-md1 layui-col-sm1 layui-col-xs1">
+						<label class="labsty">全宗号:</label>
+					</div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+						<input type="text" id="qzh" class="layui-input">
+					</div>
+					<div class="layui-col-md1 layui-col-sm1 layui-col-xs1">
+						<label class="labsty">分类号:</label>
+					</div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+						<input type="text" id="flh" class="layui-input">
+					</div>
+					<div class="layui-col-md1 layui-col-sm1 layui-col-xs1">
+						<label class="labsty">年度:</label>
+					</div>
+					<div class="layui-col-md2 layui-col-sm2 layui-col-xs2">
+						<input type="number" id="nd" class="layui-input">
+					</div>
+				</div>
+				</div>-->
+				<button class="layui-btn layui-btn-normal" id="testList" type="button">选择多文件</button>
+				<table class="layui-table" >
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>文件题名</th>
+							<th>文件名</th>
+							<th>大小</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="demoList"></tbody>
+				</table>
+			</div>
+			<button class="layui-btn" id="testListAction" type="button">开始上传</button>
+		</div>
+		
+		
+		<!--<script src="https://www.layuicdn.com/layui/layui.js"></script>-->
+		<script src="../../../../layui/rc/layui.js"></script>
+		<script>
+			layui.use('upload', function() {
+				var $ = layui.jquery,
+					upload = layui.upload;
+				var data1 = '';
+				var count=1;
+				$("#divid input[type=text]").each(function() {
+					data1 += this.value;
+					console.log(this.value);
+				})
+				var demoListView = $('#demoList'),
+					uploadListIns = upload.render({
+						elem: '#testList',
+						url: 'http://192.168.0.186:8080/upload',
+						accept: 'file',
+						multiple: true,
+							//				,data:{					
+							//					daid:'463735956',
+							//					qzh:'199',
+							//					flh:'C19',
+							//					nd:2019
+							//				}							
+						auto: false,
+						bindAction: '#testListAction',
+						choose: function(obj) {
+								var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+								//读取本地文件
+								obj.preview(function(index, file, result) {
+									var tr = $(['<tr id="upload-'+ index +'">'
+									,'<td>'+ count +'</td>'
+									,'<td>'+ '<input type="text" class="layui-input" id="tm" name="tm"/>'+'</td>'
+									,'<td>'+ file.name +'</td>'
+									,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+									,'<td>等待上传</td>'
+									,'<td>'
+									,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+									,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+									,'</td>'
+									,'</tr>'].join(''));
+									//单个重传
+									tr.find('.demo-reload').on('click', function() {
+										obj.upload(index, file);
+									});
+									count++;
+									//删除
+									tr.find('.demo-delete').on('click', function() {
+										delete files[index]; //删除对应的文件
+										tr.remove();
+										uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+									});
+
+									demoListView.append(tr);
+								});
+							}
+
+							,
+						before: function(obj) {
+								this.data = {
+									daid: $("#daid").val(),
+									qzh: $("#qzh").val(),
+									flh: $("#flh").val(),
+									nd: $("#nd").val()
+								}
+//								alert(this.data)
+//								console.log(this.data)
+							}
+
+							,
+						done: function(res, index, upload) {
+							if(res.code == 0) { //上传成功
+								var tr = demoListView.find('tr#upload-' + index),
+									tds = tr.children();
+								tds.eq(4).html('<span style="color: #5FB878;">上传成功</span>');
+								tds.eq(5).html(''); //清空操作
+								return delete this.files[index]; //删除文件队列已经上传成功的文件
+							}
+							this.error(index, upload);
+						},
+						error: function(index, upload) {
+							var tr = demoListView.find('tr#upload-' + index),
+								tds = tr.children();
+							tds.eq(4).html('<span style="color: #FF5722;">上传失败</span>');
+							tds.eq(5).find('.demo-reload').removeClass('layui-hide'); //显示重传
+						}
+					});
+
+			});
+		</script>
+	</body>
+
+</html>

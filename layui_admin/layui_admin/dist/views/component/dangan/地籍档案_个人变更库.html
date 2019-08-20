@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../../layui/rc/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/dangan.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../style/animate.css"/>
+	</head>
+	<body>
+		<div id="iframe">
+			<div class="content">
+				<h1 class="tit">地籍档案_个人变更库</h1>
+				<div class="layui-fluid">
+		  			<ul style="background-color: #fff;" class="layui-row layui-form">
+				  		<li class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">全宗号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</li>
+					  	<li class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">年度：</label>
+						    <div class="layui-input-block">
+						      <input id="test1" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</li>
+					  	<li class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">分类号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</li>
+					  	<li class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">案卷号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</li>
+		  			</ul>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+					  		<label class="layui-form-label">案卷题名：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">立卷日期：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">保管期限：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">密级：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">条形码：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">档号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label style="width: 100px" class="layui-form-label">卷内文件数：</label>
+						    <div style="margin-left: 130px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+					  		<label class="layui-form-label">总页数：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">业务编号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md9 layui-col-sm9 layui-col-xs9">
+					  		<label class="layui-form-label">业务类型：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">关联档号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md9 layui-col-sm9 layui-col-xs9">
+					  		<label class="layui-form-label">盒号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">实体份数：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md9 layui-col-sm9 layui-col-xs9">
+					  		<label style="width: 100px;" class="layui-form-label">实体当前份数：</label>
+						    <div style="margin-left: 130px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  		</div>
+		  		<div style="margin-top: 15px;" class="layui-fluid">
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label class="layui-form-label">项目号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md8 layui-col-sm8 layui-col-xs8">
+					  		<label class="layui-form-label">项目名称：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+					  		<label class="layui-form-label">申请单位：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">责任者：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">联系人：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+					  		<label class="layui-form-label">联系电话：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">受理编号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  				<div class="layui-col-md9 layui-col-sm9 layui-col-xs9">
+					  		<label style="width: 136px;" class="layui-form-label">审批表号(受理编号)：</label>
+						    <div style="margin-left: 166px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">收件时间：</label>
+						    <div class="layui-input-block">
+						      <input id="sjdate" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md9 layui-col-sm9 layui-col-xs9">
+					  		<label class="layui-form-label">返仓时间：</label>
+						    <div class="layui-input-block">
+						      <input id="fcdate" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  		</div>
+		  		<div style="margin-top: 15px;" class="layui-fluid">
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label class="layui-form-label">宗地号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label class="layui-form-label">地号：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label style="width: 85px;" class="layui-form-label">测绘成果号：</label>
+						    <div style="margin-left: 115px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+					  		<label class="layui-form-label">坐落地点：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label style="width: 85px;" class="layui-form-label">使用权类型：</label>
+						    <div style="margin-left: 115px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">土地用途：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">宗地面积：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">使用年限：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					</div>
+		  		</div>
+	  			<div style="margin-top: 15px;" class="layui-fluid">
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+					  	<div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+					  		<label style="width: 120px;" class="layui-form-label">收回的国土证号：</label>
+						    <div style="margin-left: 150px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+					  		<label style="width: 100px;" class="layui-form-label">现发国土证号：</label>
+						    <div style="margin-left: 130px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+					  	<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label class="layui-form-label">权利人：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md8 layui-col-sm8 layui-col-xs8">
+					  		<label style="width: 140px;" class="layui-form-label">现权利人身份证号码：</label>
+						    <div style="margin-left: 170px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md4 layui-col-sm4 layui-col-xs4">
+					  		<label class="layui-form-label">原权利人：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md8 layui-col-sm8 layui-col-xs8">
+					  		<label style="width: 140px;" class="layui-form-label">原权利人身份证号码：</label>
+						    <div style="margin-left: 170px;" class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">原国土ID：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">起止日期：</label>
+						    <div class="layui-input-block">
+						      <input id="ssr1" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">终止日期：</label>
+						    <div class="layui-input-block">
+						      <input id="ssr2" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-col-md3 layui-col-sm3 layui-col-xs3">
+					  		<label class="layui-form-label">终止时间：</label>
+						    <div class="layui-input-block">
+						      <input id="edate" type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  		</div>
+		  		<div style="margin-top: 15px;" class="layui-fluid">
+		  			<div style="background-color: #fff;" class="layui-row layui-form">
+		  				<div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+					  		<label class="layui-form-label">备注：</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+		  			</div>
+		  		</div>
+			</div>
+			<div class="list">
+				<ul class="logo">
+					<li class="logo_img"></li>
+					<li class="logo_txt">展开</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../../../../layui/rc/layui.js"></script>
+	<script src="../../../jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var i = $(".content").height();
+			console.log(i);
+			$('.list').height(i + 'px');
+			
+			var flag = true;
+			$('.logo').click(function(){//列表显示隐藏事件
+				if( flag ){
+					$('.content').animate({width:"75%"});
+					$('.list').animate({width:"25%"});;
+					$('.logo_img').css('background','url(../../../../images/右箭头.png) center center / 16px 16px no-repeat');
+					$('.logo_txt').html('收起');
+					flag = false;
+				}else{
+					$('.list').animate({width:"0%"});
+					$('.content').animate({width:"100%"});
+					$('.logo_img').css('background','url(../../../../images/左箭头.png) center center / 16px 16px no-repeat');
+					$('.logo_txt').html('展开');
+					flag = true;
+				}
+			})
+		})
+		layui.use('laydate', function(){
+		  var laydate = layui.laydate;
+		  
+		  //执行一个laydate实例
+		  laydate.render({
+		    elem: '#test1' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#spdate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#ljdate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#enddate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#sldate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#sjdate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#fcdate' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#edmon' //指定元素
+		  });
+		  laydate.render({
+		    elem: '#edate' //指定元素
+		    ,type: 'time'
+		  });
+		  laydate.render({
+		    elem: '#ljdate'
+		  });
+		  laydate.render({
+		    elem: '#sp'
+		  });
+		  laydate.render({
+		    elem: '#qz'
+		  });
+		  laydate.render({
+		    elem: '#zx'
+		  });
+		  laydate.render({
+		    elem: '#qzdate'
+		  });
+		  laydate.render({
+		    elem: '#ssr1'
+		  });
+		  laydate.render({
+		    elem: '#ssr2'
+		  });
+		});
+	</script>
+</html>

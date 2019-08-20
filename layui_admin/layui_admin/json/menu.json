@@ -1,0 +1,52 @@
+{
+  "code": 0
+  ,"msg": ""
+  ,"data": [{
+    "title": "档案录入"
+    ,"icon": "layui-icon-home"
+    ,"list": [{
+      "title": "待入档案"
+      ,"jump": "/"
+    }]
+  }, {
+    "name": "component"
+    ,"title": "档案管理"
+    ,"icon": "layui-icon-component"
+    ,"list": [{
+      "name": "grid"
+      ,"title": "档案目录"
+      ,"jump": "/template/addresslist"
+      ,"list": []
+    }]
+  }, {
+    "name": "template"
+    ,"title": "档案借阅"
+    ,"icon": "layui-icon-template"
+    ,"list": [{
+      "name": "personalpage"
+      ,"title": "借阅审核"
+      ,"jump": "template/personalpage"
+    },{
+      "name": ""
+      ,"title": "我的借阅"
+      ,"spread": true
+      ,"list": []
+    }]
+  }, {
+    "name": "app"
+    ,"title": "档案统计"
+    ,"icon": "layui-icon-app"
+    ,"list": [{
+      "name": "content"
+      ,"title": "统计总览"
+      ,"list": []
+    },{
+      "name": "forum"
+      ,"title": "分类统计"
+      ,"list": []
+    },{
+      "name": "message"
+      ,"title": "借阅统计"
+    }]
+  }]
+}
